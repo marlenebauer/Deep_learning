@@ -24,6 +24,6 @@ matplotlib 3.7.1
 ## Model architectures
 
 ## Contributors
-Marlene Bauer (marlene.bauer@stud-mail.uni-wuerzburg.de)
-Anna Bischof (anna.bischof@stud-mail.uni-wuerzburg.de)
-Christina Krause (christina.krause@stud-mail.uni-wuerzburg.de)
+Marlene Bauer (marlene.bauer@stud-mail.uni-wuerzburg.de)  
+Anna Bischof (anna.bischof@stud-mail.uni-wuerzburg.de)  
+Christina Krause (christina.krause@stud-mail.uni-wuerzburg.de)  
