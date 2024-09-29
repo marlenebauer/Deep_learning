@@ -2,7 +2,7 @@
 
 ## Table of contents
 * [General info](#general-info)
-* [Librarier](#libraries)
+* [Libraries](#libraries)
 * [Data preprocessing](#data-preprocessing)
 * [Model architecture](#model-architecture)
 
