@@ -22,7 +22,11 @@ matplotlib 3.7.1
 ## Data preprocessing
 The data preprocessing involves three key steps: (1) digitizing all parking lots from randomly selected aerial tiles of Würzburg using a combination of OpenStreetMap (OSM) data and manual mapping for accuracy; (2) clipping the large 2500x2500 pixel aerial tiles (40 cm resolution) into smaller 128x128 pixel tiles with overlapping edges to improve model performance; and (3) saving the resulting training tiles in .npy format for further use in model training. Code can be found in [data_preprocessing.py](data_preprocessing.py).
 
+## Data exploration 
+
+
 ## Model architectures
+Three models were setup for training: u-net model, VGG16 in combination with u-net and a deeplabv3plus. The code to run the dataset on the models refer to [google colab notebook] 
 
 ## Contributors
 Marlene Bauer (marlene.bauer@stud-mail.uni-wuerzburg.de)  
