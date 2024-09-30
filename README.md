@@ -21,14 +21,16 @@ matplotlib 3.7.1
 
 ## Data preprocessing
 The data preprocessing involves three key steps: (1) digitizing all parking lots from randomly selected aerial tiles of Würzburg using a combination of OpenStreetMap (OSM) data and manual mapping for accuracy; (2) clipping the large 2500x2500 pixel aerial tiles (40 cm resolution) into smaller 128x128 pixel tiles with overlapping edges to improve model performance; and (3) saving the resulting training tiles in .npy format for further use in model training. Code can be found in [data_preprocessing.py](data_preprocessing.py).
-Addtionally, we filtered these tiles and only kept those, that contain at least one parking lot pixel. Moreover, we also saved those tiles, where the pixel sum of the parking lots is above the median to have more relevant data for our model. These tiles are added within the data augumentation. Code can be found in [data_preparation.py](data_preparation.py).
-Lastly, we realized that we do the splitting into training, validation and testing data before adding the tiles above the median in the data augumentation, so we filtered these tiles again, so that they dont contain tiles of the testing set. Code can be found here [Filter_masks_above_median.ipynb](Filter_masks_above_median.ipynb)
+This resulted in >30000 tiles, which interfered with training. Therefore, the tiles were filtered and only the tiles that contained at least on parking lot pixel were kept. In a second folder, all tiles that contain above median amount of parking lot pixels were copied, code can be found in [data_preparation.py](data_preparation.py). The folder was created to serve as addtional tiles for the implementation of Curriculum Learning as described in [ParkingLotDetection_allmodels.ipynb](ParkingLotDetection_allmodels.ipynb). Finally, all testing data present in the above median images was filtered out, code can be found here [Filter_masks_above_median.ipynb](Filter_masks_above_median.ipynb). 
 
 ## Data exploration 
-
+The final tranings dataset contained 8260 tiles before augmentation. With a class splitting of No. of non-parking lot pixel: and No. of parking lot pixel: . Due to the imbalanced dataset, class weights were calculated and applied in the learning designed. The median amount of parkinglot pixels in the dataset amounted to XXX pixel. Durther explorations can be found in [data_exploration_final.ipynb](data_exploration_final.ipynb). 
 
 ## Model architectures
-Three models were setup for training: u-net model, VGG16 in combination with u-net and a deeplabv3plus. The code to run the dataset on the models refer to [google colab notebook] 
+Three models were setup for training: u-net model, VGG16 in combination with u-net and a deeplabv3plus. The code to run the dataset on the models can be found on [ParkingLotDetection_allmodels.ipynb](ParkingLotDetection_allmodels.ipynb). 
+
+## Evaluation 
+An evaluation script was set up containing Loss and Accuracy plotting, and code to calculate tthe following evaluation metrics: Intersection of Union, Precision, Recall and F1-Score. Also to be found in [ParkingLotDetection_allmodels.ipynb](ParkingLotDetection_allmodels.ipynb).
 
 ## Contributors[ParkingLotDetection_allmodels.ipynb](ParkingLotDetection_allmodels.ipynb).  
 
