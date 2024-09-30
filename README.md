@@ -4,7 +4,9 @@
 * [General info](#general-info)
 * [Libraries](#libraries)
 * [Data preprocessing](#data-preprocessing)
+* [Data exploration ](#data-exploration)
 * [Model architecture](#model-architecture)
+* [Evaluation](#evaluation)
 * [Contributors](#contributors)
 
 ## General info
@@ -24,7 +26,7 @@ The data preprocessing involves three key steps: (1) digitizing all parking lots
 This resulted in 31213 tiles, which interfered with training. Therefore, the tiles were filtered and only the tiles that contained at least on parking lot pixel were kept. In a second folder, all tiles that contain above median amount of parking lot pixels were copied, code can be found in [data_preparation.py](data_preparation.py). The folder was created to serve as addtional tiles for the implementation of Curriculum Learning as described in [ParkingLotDetection_allmodels.ipynb](ParkingLotDetection_allmodels.ipynb). Finally, all testing data present in the above median images was filtered out, code can be found here [Filter_masks_above_median.ipynb](Filter_masks_above_median.ipynb). 
 
 ## Data exploration 
-The final dataset contained 8260 tiles before augmentation. With a class splitting of  89,7% non-parking lot pixel:121325908 and 10,3% of parking lot pixel:14005932 . Due to the imbalanced dataset, class weights were calculated and applied in the learning designed. The median amount of parkinglot pixels in the dataset amounted to 945 pixel. Further explorations can be found in [data_exploration_final.ipynb](data_exploration_final.ipynb). 
+The final dataset contained 8260 tiles before augmentation. With a class splitting of  89,7% non-parking lot pixel: 121325908 and 10,3% of parking lot pixel: 14005932. Due to the imbalanced dataset, class weights were calculated and applied in the learning designed. The median amount of parkinglot pixels in the dataset amounted to 945 pixel. Further explorations can be found in [data_exploration_final.ipynb](data_exploration_final.ipynb). 
 
 ## Model architectures
 Three models were setup for training: u-net model, VGG16 in combination with u-net and a deeplabv3plus. The code to run the dataset on the models can be found on [ParkingLotDetection_allmodels.ipynb](ParkingLotDetection_allmodels.ipynb). 
